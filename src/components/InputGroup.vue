@@ -27,7 +27,6 @@ export default {
 
 <style lang="scss" scoped>
 .input-container {
-  /* max-width: 640px; */
   display: flex;
   gap: 1rem;
 }
@@ -36,10 +35,12 @@ export default {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 label {
   font-weight: 800;
+  letter-spacing: 0.35rem;
   color: var(--smokey-grey);
 }
 
