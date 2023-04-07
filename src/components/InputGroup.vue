@@ -9,18 +9,18 @@ export default {
 </script>
 
 <template>
-  <div class="input-container">
+  <div class="input-container" :class="hasError && 'has-error'">
     <div class="input-group">
       <label for="day">DAY</label>
-      <input type="text" v-model="modelValue.day" />
+      <input type="text" v-model="modelValue.day" placeholder="DD" />
     </div>
     <div class="input-group">
       <label for="month">MONTH</label>
-      <input type="text" v-model="modelValue.month" />
+      <input type="text" v-model="modelValue.month" placeholder="MM" />
     </div>
     <div class="input-group">
       <label for="year">YEAR</label>
-      <input type="text" v-model="modelValue.year"/>
+      <input type="text" v-model="modelValue.year" placeholder="YYYY" />
     </div>
   </div>
 </template>
@@ -49,8 +49,18 @@ input {
   border: 1px solid var(--light-grey);
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  flex-grow: 1;
+  font-weight: 700;
   width: 5.5rem;
+}
+
+.has-error {
+  label{
+    color: red;
+  }
+
+  input {
+    border-color: red;
+  }
 }
 
 @media (min-width: 840px) {
