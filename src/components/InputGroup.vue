@@ -4,7 +4,7 @@ export default {
   emits: ['update:modelValue'],
   mounted() {
     console.log(this.modelValue)
-  }
+  },
 }
 </script>
 
@@ -12,15 +12,30 @@ export default {
   <div class="input-container" :class="hasError && 'has-error'">
     <div class="input-group">
       <label for="day">DAY</label>
-      <input type="text" v-model="modelValue.day" placeholder="DD" />
+      <input
+        type="text"
+        :value="modelValue.day || null"
+        @input="modelValue.day = $event.target?.value"
+        placeholder="DD"
+      />
     </div>
     <div class="input-group">
       <label for="month">MONTH</label>
-      <input type="text" v-model="modelValue.month" placeholder="MM" />
+      <input
+        type="text"
+        :value="modelValue.month || null"
+        @input="modelValue.month = $event.target?.value"
+        placeholder="MM"
+      />
     </div>
     <div class="input-group">
       <label for="year">YEAR</label>
-      <input type="text" v-model="modelValue.year" placeholder="YYYY" />
+      <input
+        :value="modelValue.year || null"
+        @input="modelValue.year = $event.target?.value"
+        type="text"
+        placeholder="YYYY"
+      />
     </div>
   </div>
 </template>
@@ -54,7 +69,7 @@ input {
 }
 
 .has-error {
-  label{
+  label {
     color: red;
   }
 
