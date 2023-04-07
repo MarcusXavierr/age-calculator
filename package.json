@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
