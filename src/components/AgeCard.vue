@@ -51,7 +51,7 @@ export default {
       return isValidDate && isPastDate && isAgeValid
     },
 
-    calculateAge(date: date): personAge {
+    calculateAge(date: date | any): personAge {
       const birthdate = new Date(date.year, date.month - 1, date.day)
       const now = new Date()
 
